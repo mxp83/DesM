@@ -1,1 +1,48 @@
-// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+.hidden {
+	display:none;
+}
+#main-menu {
+	margin-top:10vh;
+
+	.menu-item {
+		float:none;
+		display: block;
+		text-align: center;
+		font-family: BebasNeue;
+		font-size: 2.250rem;
+		text-transform: uppercase;
+	}
+	a {
+		color: white;
+
+		&:hover {
+			color: darken($brand-primary,20%);
+		}
+	}
+}
+.menu_button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 24;
+	cursor: pointer;
+}
+body {
+	font-family: $open-sans-condensed;
+	font-size:0.75rem;
+
+	.navbar {
+		background: green;
+
+		.menu_button {
+			color:white;
+			font-size: 2rem;
+			top: -3px;
+			left: 11px;
+		}
+		.container {
+			margin-left:0;
+			margin-right:0;
+		}
+	}
+}
