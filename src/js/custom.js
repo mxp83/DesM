@@ -1,15 +1,33 @@
 
 var $ = jQuery;
 
-//Show Menu
-$('.menu_button').click(function(){
-	$('.pop_menu').addClass('pop_menu_open').removeClass('hidden pop_menu_close');
-});
+$(document).ready(function(){												
 
-//Hide Menu
-$('.close_button').click(function(){
-	$('.pop_menu').addClass('pop_menu_close').removeClass('pop_menu_open').delay(500).queue(function(next){
-		$(this).addClass('hidden');
-		next();
-	});
-});
+       //Navigation Menu Slider
+        $('#nav-expander').on('click',function(e){
+      		e.preventDefault();
+      		$('body').toggleClass('nav-expanded');
+      	});
+      	$('#nav-close').on('click',function(e){
+      		e.preventDefault();
+      		$('body').removeClass('nav-expanded');
+      	});
+
+      	// Initialize navgoco with default options
+        $(".main-menu").navgoco({
+            caret: '<span class="caret"></span>',
+            accordion: false,
+            openClass: 'open',
+            save: true,
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+      });

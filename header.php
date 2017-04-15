@@ -32,23 +32,28 @@ $container = get_theme_mod( 'understrap_container_type' );
 
       <a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-			<div class="menu_button"><i class="fa fa-bars" aria-hidden="true"></i></div>
-			<div class="pop_menu hidden">
+	  <nav>
+	  	
+		  <!-- The WordPress Menu goes here -->
+		  <?php wp_nav_menu(
+		    array(
+		      'theme_location' => 'primary',
+		      'container_class' => '',
+		      'menu_class' => '',
+		      'fallback_cb' => '',
+		      'menu_id' => 'main-menu',
+		      'walker' => new wp_bootstrap_navwalker()
+		    )
+		   ); ?>
+	  </nav>
 
-			  <!-- The WordPress Menu goes here -->
-			  <?php wp_nav_menu(
-			    array(
-			      'theme_location' => 'primary',
-			      'container_class' => '',
-			      'menu_class' => 'nav',
-			      'fallback_cb' => '',
-			      'menu_id' => 'main-menu',
-			      'walker' => new wp_bootstrap_navwalker()
-			    )
-			   ); ?>
-			  
-			</div>
-
-		</nav>
+	  <div class="navbar navbar-inverse navbar-fixed-top">      
+		 
+		    <!--Include your brand here-->
+		    <div class="navbar-header pull-right">
+		      <a id="nav-expander" class="nav-expander fixed">
+		        MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
+		      </a>
+		    </div>
+		</div>
     </div><!-- .wrapper-navbar end -->

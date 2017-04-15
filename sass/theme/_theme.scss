@@ -1,38 +1,134 @@
-.hidden {
-	display:none;
+.menu-item {
+	float:none;
+	display: block;
+	text-transform: uppercase;
 }
+a {
+	color: white;
+
+	&:hover {
+		color: darken($brand-primary,20%);
+	}
+}
+
+// Navigation menu
 #main-menu {
-	margin-top:10vh;
-
-	.menu-item {
-		float:none;
-		display: block;
-		text-align: center;
-		font-family: BebasNeue;
-		font-size: 2.250rem;
-		text-transform: uppercase;
-	}
-	a {
-		color: white;
-
-		&:hover {
-			color: darken($brand-primary,20%);
-		}
-	}
+	margin-top:5vh;
 }
 .menu_button {
 	position: absolute;
 	top: 20px;
-	right: 20px;
+	left: 20px;
 	z-index: 24;
 	cursor: pointer;
+
+	transition: left 0.3s ease-in-out 0s;
+	-webkit-transition: left 0.3s ease-in-out 0s;
+	-moz-transition: left 0.3s ease-in-out 0s;
+	-o-transition: left 0.3s ease-in-out 0s;
+}
+.menu_button.fixed {
+	position:fixed;
+}
+a.nav-expander {
+	color:$brand-primary !important;
+	font-size:1.2rem;
+}
+.nav-expanded .nav-expander.fixed {
+	left:20em;
+}
+nav {
+  background: $brand-dark;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  left: -20em;
+  font-size: 15px;
+  top: 0;
+  width: 20em;
+  z-index: 2000;
+
+  transition: left 0.3s ease-in-out 0s;
+  -webkit-transition: left 0.3s ease-in-out 0s;
+  -moz-transition: left 0.3s ease-in-out 0s;
+  -o-transition: left 0.3s ease-in-out 0s;
+
+}
+.nav-expanded nav {
+  left: 0;
+}
+
+body.nav-expanded {
+  margin-left: 0em;
+  transition: left 0.4s ease-in-out 0s;
+  -webkit-transition: left 0.4s ease-in-out 0s;
+  -moz-transition: left 0.4s ease-in-out 0s;
+  -o-transition: left 0.4s ease-in-out 0s;
+}
+
+#nav-close {
+}
+.main-menu {
+  padding-top: 12px;
+
+  li {
+	  border-bottom: 1px solid #323949;
+	  margin-left: 20px;
+	  font-size: 18px;
+	  padding: 12px;
+
+	  a {
+		  color: #6F7D8C;
+		  text-decoration: none;
+
+		  &:hover {
+			  color: #FFFFFF;
+			  text-decoration: none;
+			}
+			.caret {
+				width: 0;
+				height: 0;
+				display: inline-block;
+				vertical-align: top;
+				border-top: 4px solid #4f5963;
+				border-right: 4px solid transparent;
+				border-left: 4px solid transparent;
+				content: "";
+			    margin-top: 8px;
+			}
+		}
+
+		.sub-nav {
+		  border-bottom: 0px;
+		  padding: 4px;
+		}
+	}
+}
+
+.main-menu a:hover {
+	.caret {
+		border-top-color: #4f5963;
+	}
+}
+
+.main-menu li.open > a > .caret {
+	border-top: none;
+	border-bottom: 4px solid #4f5963;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+
+.main-menu li.open > a:hover > .caret {
+	border-bottom-color: #4f5963;
 }
 body {
 	font-family: $open-sans-condensed;
 	font-size:0.75rem;
 
 	.navbar {
-		background: green;
+		height:45px;
+		background: $brand-dark;
 
 		.menu_button {
 			color:white;
