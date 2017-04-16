@@ -1,7 +1,7 @@
-
 var $ = jQuery;
+var width = $(window).width();
 
-$(document).ready(function(){												
+$(document).ready(function(){									
 
        //Navigation Menu Slider
         $('#nav-expander').on('click',function(e){
@@ -29,5 +29,14 @@ $(document).ready(function(){
                 easing: 'swing'
             }
         });
-
-      });
+});
+$(window).on('resize', function(){
+	if(width > 992) {
+    $('#main-menu li.menu-item-has-children').mouseover(function(){
+		$(this).addClass('show');
+    });
+    $('#main-menu li.menu-item-has-children').mouseout(function(){
+    	$(this).removeClass('show');
+    });
+}
+});
