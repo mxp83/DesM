@@ -28,50 +28,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="hfeed site" id="page">
 
     <!-- ******************* The Navbar Area ******************* -->
-    <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
-      <a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content', 'understrap' ); ?></a>
+    
+    
+	<?php include(get_template_directory() . '/inc/mobile-nav.php'); ?> 
+	
+	<?php include(get_template_directory() . '/inc/desktop-nav.php'); ?> 
+	<div id="page-main">
 
-	  <nav>
-	  	
-		  <!-- The WordPress Menu goes here -->
-		  <?php wp_nav_menu(
-		    array(
-		      'theme_location' => 'primary',
-		      'container_class' => '',
-		      'menu_class' => '',
-		      'fallback_cb' => '',
-		      'menu_id' => 'main-menu',
-		      'walker' => new wp_bootstrap_navwalker()
-		    )
-		   ); ?>
-	  </nav>
-
-	  <div class="navbar navbar-inverse navbar-fixed-top">      
-		 
-		    <!--Include your brand here-->
-
-		    <div class="navbar-header">
-		      <a id="nav-expander" class="nav-expander fixed">
-		        MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
-		      </a>
-		      <div class="logo"><?php if ( ! has_custom_logo() ) { ?>
-
-						<?php if ( is_front_page() && is_home() ) : ?>
-
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-							
-						<?php else : ?>
-
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						
-						<?php endif; ?>
-						
-					
-					<?php } else {
-						the_custom_logo();
-					} ?>
-					<!-- end custom logo -->
-			  </div>
-		    </div>
-		</div>
-    </div><!-- .wrapper-navbar end -->

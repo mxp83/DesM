@@ -166,8 +166,8 @@ gulp.task('scripts', function() {
         // End - All BS4 stuff
 
         basePaths.dev + 'js/skip-link-focus-fix.js',
-        basePaths.dev + 'js/custom.js',
-        basePaths.dev + 'js/jquery.navgoco.min.js'
+        basePaths.dev + 'js/responsiveslides.js',
+        basePaths.dev + 'js/custom.js'
     ];
   gulp.src(scripts)
     .pipe(concat('theme.min.js'))

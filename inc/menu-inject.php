@@ -3,7 +3,7 @@
 	function close_button ( $items, $args ) {
 
 		if ($args->theme_location == 'primary') {    
-		    $myMenu='<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="nav-link" id="nav-close" title="Close" href="#">close</a></li>';
+		    $myMenu='<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="nav-link nav-closer" title="Close" href="#">close</a></li>';
 		    $items .= $myMenu;
 		    return $items;
 		} else {
