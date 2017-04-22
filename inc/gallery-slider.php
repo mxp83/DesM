@@ -7,6 +7,7 @@
 		
 		<?php if(get_field('main_text')) : ?>
 			<div class="hero-box text-center">
+				<div class="hero-content">
 					<h1 class="hero-text"><?php the_field('main_text') ?></h1>
 				<?php if(get_field('sub_text')) : ?>
 					<h2 class="hero-text"><?php the_field('sub_text') ?></h2>
@@ -14,6 +15,7 @@
 				<?php if(get_field('link_url')) : ?>
 					<a class="btn hero-btn" href="<?php the_field('link_url'); ?>"><?php the_field('link_text') ?></a>
 				<?php endif; ?>
+				</div>
 			</div>
 		<?php endif; ?>
 

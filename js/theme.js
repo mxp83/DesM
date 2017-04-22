@@ -5388,28 +5388,26 @@ h+"ms ease-in-out","-o-transition":"opacity "+h+"ms ease-in-out",transition:"opa
 l.find("a"),t=function(a){r.closest("li").removeClass(x).eq(a).addClass(x)};a.auto&&(v=function(){q=setInterval(function(){e.stop(!0,!0);var b=p+1<D?p+1:0;(a.pager||a.manualControls)&&t(b);B(b)},E)},v());n=function(){a.auto&&(clearInterval(q),v())};a.pause&&f.hover(function(){clearInterval(q)},function(){n()});if(a.pager||a.manualControls)r.bind("click",function(b){b.preventDefault();a.pauseControls||n();b=r.index(this);p===b||c("."+k).queue("fx").length||(t(b),B(b))}).eq(0).closest("li").addClass(x),
 a.pauseControls&&r.hover(function(){clearInterval(q)},function(){n()});if(a.nav){g="<a href='#' class='"+F+" prev'>"+a.prevText+"</a><a href='#' class='"+F+" next'>"+a.nextText+"</a>";m.navContainer?c(a.navContainer).append(g):f.after(g);var d=c("."+d+"_nav"),I=d.filter(".prev");d.bind("click",function(b){b.preventDefault();b=c("."+k);if(!b.queue("fx").length){var d=e.index(b);b=d-1;d=d+1<D?p+1:0;B(c(this)[0]===I[0]?b:d);(a.pager||a.manualControls)&&t(c(this)[0]===I[0]?b:d);a.pauseControls||n()}});
 a.pauseControls&&d.hover(function(){clearInterval(q)},function(){n()})}}if("undefined"===typeof document.body.style.maxWidth&&m.maxwidth){var J=function(){f.css("width","100%");f.width()>w&&f.css("width",w)};J();c(K).bind("resize",function(){J()})}})}})(jQuery,this,0);
-var $ = jQuery;
-var width = $(window).width();
+var width = jQuery(window).width();
 
 //Mobile Nav button
-$('#nav-expander').on('click',function(){
+jQuery('#nav-expander').on('click',function(){
 	openNav();
 });
-$('.nav-closer').on('click',function(){
+jQuery('.nav-closer').on('click',function(){
 	closeNav();
 });
-$('.sidenav').prepend('<li class="menu-item nav-item text-center logo"><img width="250" height="75" src="/wp-content/uploads/2017/04/des_moines_logo-e1492620725464.png" class="img-responsive" title="Home" alt="logo" itemprop="logo"></li>');
-
+jQuery('.sidenav').prepend('<li class="menu-item nav-item text-center logo"><img width="250" height="75" src="/wp-content/uploads/2017/04/des_moines_logo-e1492620725464.png" class="img-responsive" title="Home" alt="logo" itemprop="logo"></li>');
 
 //enable hover on desktop view
-$(document).ready(function(){
+jQuery(document).ready(function(){
 	hoverClose();	
 });
 
-$(window).on('resize', hoverClose());
+jQuery(window).on('resize', hoverClose());
 
 //responsive slides (header/images)
-$('.rslides').responsiveSlides({
+jQuery('.rslides').responsiveSlides({
 	auto:true,
 	speed:1000,
 	timeout:8000,
@@ -5417,6 +5415,21 @@ $('.rslides').responsiveSlides({
 	pause: true,
 	prevText: '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
 	nextText: '<i class="fa fa-chevron-right" aria-hidden="true"></i>'
+});
+
+jQuery('.overlay').hover(function(){
+	jQuery(this).next('.promo-image-text').css('opacity','1');
+	jQuery(this).css('opacity','1');
+}, function(){
+	jQuery(this).next('.promo-image-text').css('opacity','0');
+	jQuery(this).css('opacity','0');
+});
+jQuery('.promo-image-text').hover(function(){
+	jQuery(this).prev('.overlay').css('opacity','1');
+	jQuery(this).css('opacity','1');
+}, function(){
+	jQuery(this).prev('.overlay').css('opacity','0');
+	jQuery(this).css('opacity','0');
 });
 
 //functions
@@ -5435,18 +5448,18 @@ function hoverClose() {
 
 function disableHover() {
 	if(width > 992) {
-	    $('.navbar-desktop li.menu-item-has-children').mouseover(function(){
-			$(this).addClass('show');
+	    jQuery('.navbar-desktop li.menu-item-has-children').mouseover(function(){
+			jQuery(this).addClass('show');
 	    });
-	    $('.navbar-desktop li.menu-item-has-children').mouseout(function(){
-	    	$(this).removeClass('show');
+	    jQuery('.navbar-desktop li.menu-item-has-children').mouseout(function(){
+	    	jQuery(this).removeClass('show');
 	    });
 	}
 }
 function hideClose() {
 	if(width > 992) {
-		$('.nav-closer').hide();
+		jQuery('.nav-closer').hide();
 	} else if (width < 992) {
-		$('.nav-closer').show();
+		jQuery('.nav-closer').show();
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Portfolio Cases Archive
+ * Template Name: Promotions Page
  *
  * @package understrap
  */
@@ -25,7 +25,7 @@
                  * If you want to override this in a child theme, then include a file
                  * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                  */
-                get_template_part( 'loop-templates/content', 'portfolio_archive' );
+                get_template_part( 'loop-templates/content', 'promotions-archive' );
               ?>
 
             <?php endwhile; ?>

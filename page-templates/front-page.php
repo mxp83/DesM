@@ -38,7 +38,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<?php endwhile; // end of the loop. ?>
 
-
 				</main><!-- #main -->
 
 			</div><!-- #primary -->
@@ -48,5 +47,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div><!-- Container end -->
 
 </div><!-- Wrapper end -->
+
+<?php get_template_part('loop-templates/content', 'promo-boxes'); ?>
 
 <?php get_footer(); ?>

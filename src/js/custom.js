@@ -1,25 +1,23 @@
-var $ = jQuery;
-var width = $(window).width();
+var width = jQuery(window).width();
 
 //Mobile Nav button
-$('#nav-expander').on('click',function(){
+jQuery('#nav-expander').on('click',function(){
 	openNav();
 });
-$('.nav-closer').on('click',function(){
+jQuery('.nav-closer').on('click',function(){
 	closeNav();
 });
-$('.sidenav').prepend('<li class="menu-item nav-item text-center logo"><img width="250" height="75" src="/wp-content/uploads/2017/04/des_moines_logo-e1492620725464.png" class="img-responsive" title="Home" alt="logo" itemprop="logo"></li>');
-
+jQuery('.sidenav').prepend('<li class="menu-item nav-item text-center logo"><img width="250" height="75" src="/wp-content/uploads/2017/04/des_moines_logo-e1492620725464.png" class="img-responsive" title="Home" alt="logo" itemprop="logo"></li>');
 
 //enable hover on desktop view
-$(document).ready(function(){
+jQuery(document).ready(function(){
 	hoverClose();	
 });
 
-$(window).on('resize', hoverClose());
+jQuery(window).on('resize', hoverClose());
 
 //responsive slides (header/images)
-$('.rslides').responsiveSlides({
+jQuery('.rslides').responsiveSlides({
 	auto:true,
 	speed:1000,
 	timeout:8000,
@@ -27,6 +25,21 @@ $('.rslides').responsiveSlides({
 	pause: true,
 	prevText: '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
 	nextText: '<i class="fa fa-chevron-right" aria-hidden="true"></i>'
+});
+
+jQuery('.overlay').hover(function(){
+	jQuery(this).next('.promo-image-text').css('opacity','1');
+	jQuery(this).css('opacity','1');
+}, function(){
+	jQuery(this).next('.promo-image-text').css('opacity','0');
+	jQuery(this).css('opacity','0');
+});
+jQuery('.promo-image-text').hover(function(){
+	jQuery(this).prev('.overlay').css('opacity','1');
+	jQuery(this).css('opacity','1');
+}, function(){
+	jQuery(this).prev('.overlay').css('opacity','0');
+	jQuery(this).css('opacity','0');
 });
 
 //functions
@@ -45,18 +58,18 @@ function hoverClose() {
 
 function disableHover() {
 	if(width > 992) {
-	    $('.navbar-desktop li.menu-item-has-children').mouseover(function(){
-			$(this).addClass('show');
+	    jQuery('.navbar-desktop li.menu-item-has-children').mouseover(function(){
+			jQuery(this).addClass('show');
 	    });
-	    $('.navbar-desktop li.menu-item-has-children').mouseout(function(){
-	    	$(this).removeClass('show');
+	    jQuery('.navbar-desktop li.menu-item-has-children').mouseout(function(){
+	    	jQuery(this).removeClass('show');
 	    });
 	}
 }
 function hideClose() {
 	if(width > 992) {
-		$('.nav-closer').hide();
+		jQuery('.nav-closer').hide();
 	} else if (width < 992) {
-		$('.nav-closer').show();
+		jQuery('.nav-closer').show();
 	}
 }
