@@ -2,6 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
+				<p>Connect with Us:
 				<?php if(get_field('facebook',14)) : ?>
 					<a target="_blank" href="<?php the_field('facebook',14); ?>"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 				<?php endif; ?>
@@ -14,6 +15,7 @@
 				<?php if(get_field('youtube',14)) : ?>
 					<a target="_blank" href="<?php the_field('youtube',14); ?>"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
 				<?php endif; ?>
+				</p>
 			</div>
 		</div>
 	</div>

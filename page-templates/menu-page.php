@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Full Width Page
+ * Template Name: Menu Page
  *
- * Template for displaying a page without sidebar even if a sidebar widget is published.
+ * Template for displaying a menu pages
  *
  * @package understrap
  */
@@ -27,7 +27,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+						<?php get_template_part( 'loop-templates/content', 'menu' ); ?>
 
 						<?php
 						// If comments are open or we have at least one comment, load up the comment template.

@@ -16,13 +16,13 @@
     <div class="col-md-12 content-area" id="primary">
 
       <main class="site-main" id="main" role="main">
-      
+
       	<?php the_breadcrumb(); ?>
 
         <?php while ( have_posts() ) : the_post(); ?>
 
 
-          <?php get_template_part( 'loop-templates/content', 'promotions' ); ?>        
+          <?php get_template_part( 'loop-templates/content', 'menu' ); ?>        
 
         <?php endwhile; // end of the loop. ?>
 

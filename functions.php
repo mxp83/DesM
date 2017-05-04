@@ -72,6 +72,10 @@ require get_template_directory() . '/inc/woocommerce.php';
  */
 require get_template_directory() . '/inc/editor.php';
 /**
- * Load Editor functions.
+ * Menu Inject functions.
  */
 require get_template_directory() . '/inc/menu-inject.php';
+/**
+ * Breadcrumbs functions.
+ */
+require get_template_directory() . '/inc/breadcrumbs.php';

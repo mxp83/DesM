@@ -1,5 +1,6 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,700|Open+Sans+Condensed:300");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600");
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -9215,7 +9216,9 @@ body {
   font-size: 1.3rem; }
   body h1, body h2, body h3, body h4, body h5 {
     font-family: "Open Sans", sans-serif;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #671913; }
   body #wrapper-footer {
     background: #2c2520; }
     body #wrapper-footer #secondary-menu {
@@ -9331,7 +9334,7 @@ body {
     .navbar-desktop .menu-primary-menu-container ul {
       position: relative; }
       .navbar-desktop .menu-primary-menu-container ul li {
-        transition: background-color 0.3s linear; }
+        transition: background-color 0.2s linear; }
         .navbar-desktop .menu-primary-menu-container ul li a {
           font-size: 1.3rem; }
           .navbar-desktop .menu-primary-menu-container ul li a:hover {
@@ -9340,9 +9343,9 @@ body {
         .navbar-desktop .menu-primary-menu-container ul li:hover {
           background: #671913; }
       .navbar-desktop .menu-primary-menu-container ul ul.dropdown-menu {
-        background: #2c2520;
+        background: #671913;
         position: absolute;
-        top: 35px;
+        top: 80px;
         left: 0;
         border-radius: 0;
         border: 0;
@@ -9411,8 +9414,6 @@ body {
   height: 100%;
   background-color: rgba(44, 37, 32, 0.6);
   transition: background-color 0.4s linear; }
-  .hero-box:hover {
-    background-color: rgba(44, 37, 32, 0.8); }
   .hero-box .hero-content {
     position: relative;
     top: 50%;
@@ -9423,11 +9424,19 @@ body {
     text-shadow: 0 2px #000; }
   .hero-box h1 {
     font-size: 2rem;
-    color: #b3a5c0;
-    font-family: "Open Sans", sans-serif; }
+    color: #e3d7ca;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600; }
+    @media (min-width: 992px) {
+      .hero-box h1 {
+        font-size: 3rem; } }
   .hero-box h2 {
     font-size: 1.4rem;
-    color: #f3f3f3; }
+    color: #f3f3f3;
+    text-transform: none; }
+    @media (min-width: 992px) {
+      .hero-box h2 {
+        font-size: 2.4rem; } }
   .hero-box a.hero-btn {
     background: #671913;
     color: white;
@@ -9435,12 +9444,15 @@ body {
 
 #social-connect {
   background: #67574b;
-  font-size: 2rem; }
+  font-size: 2rem;
+  color: #f3f3f3; }
   #social-connect a {
     margin: 0 5px;
     transition: color 0.3s linear; }
     #social-connect a:hover {
       color: white; }
+  #social-connect p {
+    margin-bottom: 5px; }
 
 #promo-squares {
   background-color: #671913;
@@ -9488,6 +9500,72 @@ body {
           border: 1px solid white;
           border-radius: 0;
           margin-top: 3vh; }
+
+#promos {
+  padding: 5vh 0; }
+  #promos h3 {
+    color: white;
+    margin-bottom: 20px; }
+  #promos .promo-item {
+    position: relative;
+    margin-bottom: 2vh; }
+    #promos .promo-item .promo-image-box {
+      height: 300px;
+      width: auto;
+      position: relative;
+      background-size: cover;
+      background-position: center center; }
+      #promos .promo-item .promo-image-box .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(44, 37, 32, 0.6);
+        top: 0;
+        left: 0;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.3s linear;
+        cursor: pointer; }
+        @media (min-width: 992px) {
+          #promos .promo-item .promo-image-box .overlay:hover {
+            opacity: 1; } }
+      #promos .promo-item .promo-image-box .promo-image-text {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+        opacity: 0;
+        transition: opacity 0.3s linear;
+        cursor: pointer; }
+        #promos .promo-item .promo-image-box .promo-image-text h5 {
+          color: white;
+          font-weight: bold;
+          font-size: 1.7rem;
+          text-transform: uppercase; }
+        #promos .promo-item .promo-image-box .promo-image-text .promo-btn {
+          color: white;
+          border: 1px solid white;
+          border-radius: 0;
+          margin-top: 3vh; }
+
+.item-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem; }
+
+.item-description p {
+  font-size: 1rem;
+  text-transform: none; }
+
+.wrap p {
+  color: white; }
+
+.breadcrumb-link {
+  color: #671913;
+  font-size: 1.2rem; }
+
+.breadcrumb-current {
+  font-weight: bold;
+  font-size: 1.2rem; }
 
 /*
 * Use existing Bootstrap 4 classes and

@@ -4,12 +4,13 @@
 // As example you find one of the most important Bootstrap variable below: $brand-primary.
 // Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
 // Just add your color code here, compile the theme.scss file to change this color everywhere
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300');
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600');
 
 $font-family-sans-serif:Arial, sans-serif;
 $open-sans-condensed: 'Open Sans Condensed', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
+$poppins: 'Poppins', sans-serif;
 
 $brand-primary:         #e3d7ca; //light tan
 $brand-dark:			#2c2520; //dark, but not black
