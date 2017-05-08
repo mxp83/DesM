@@ -8,7 +8,7 @@
 			echo "</a> &#187; ";
 				echo "<span class='breadcrumb-current'>";
 				echo the_title();
-				echo "</span>";
+				echo "</span><hr class='breadcrumb-line'>";
 		}
 	}
  ?>

@@ -22,9 +22,9 @@
 				while ( have_rows('menu_section') ) : the_row();
 		?>
 
-			<div class="menu-section <?php the_sub_field('section_name'); ?> clearfix">
+			<div class="menu-section <?php the_sub_field('course_name'); ?> clearfix">
 				<div class="col-sm-12 clearfix">
-					<h2><?php the_sub_field('section_name'); ?></h2>
+					<h2 class="course-title"><?php the_sub_field('course_name'); ?></h2>
 				</div>
 				<?php if(get_sub_field('section_featured_item') ) : ?>
 					<div class="col-md-2 clearfix">
@@ -48,10 +48,14 @@
 						?>
 
 						<article class="col-md-6">
-							<div class="menu-item">
+							<div class="food-menu-item">
+							<div class="row">
+								<div class="menu-item-stuff col-md-12">
+									<p class="item-title"><?php the_sub_field('item_title'); ?></p>
+								</div>
+							</div>
 								<div class="row">
-									<div class="menu-item-stuff col-md-8">
-										<p class="item-title"><?php the_sub_field('item_title'); ?></p>
+									<div class="menu-item-stuff col-md-9">
 										<?php if( get_sub_field('item_description') ) : ?>
 											<div class="item-description"><?php the_sub_field('item_description'); ?></div>
 										<?php endif; ?>
@@ -67,16 +71,26 @@
 										?>
 											<img src="<?php bloginfo('template_url'); ?>/img/vegetarian.png" alt="Vegetarian" />
 										<?php endif; ?>
-
-										<?php $priceCost = get_sub_field('item_price');
-											  $price = explode('.', $priceCost);
-											  $dollars = $price[0];
-											  $cents = $price[1];
-										?>
 									</div>
+									<div class="menu-price-chunk col-md-3">
+										<?php if (have_rows('item_prices')) : 
+											while (have_rows('item_prices')) : the_row();
+										?>
+											<div class="row">
+												<div class="col-md-12">
+													<?php $priceCost = get_sub_field('price_option_value');
+														  $price = explode('.', $priceCost);
+														  $dollars = $price[0];
+														  $cents = $price[1];
+													?>
+													<p><?php echo get_sub_field('price_option_name'); ?>
+													<em class="menu-item-price">$<?php echo $dollars; echo $cents ? '.' : false; ?><sup><?php echo $cents ? $cents : false; ?></sup></em></p>
+												</div>
+											</div>
 
-									<div class="menu-price-chunk col-md-4">
-										<em class="menu-item-price">$<?php echo $dollars; echo $cents ? '.' : false; ?><sup><?php echo $cents ? $cents : false; ?></sup></em>
+										<?php endwhile;
+											endif;
+										?>
 									</div>
 								</div>
 							</div>

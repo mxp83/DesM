@@ -5401,10 +5401,17 @@ jQuery('.sidenav').prepend('<li class="menu-item nav-item text-center logo"><img
 
 //enable hover on desktop view
 jQuery(document).ready(function(){
-	hoverClose();	
+	hoverClose();
+
+	jQuery('body').addClass('loaded');
 });
 
 jQuery(window).on('resize', hoverClose());
+
+//Bootstrap navbar Prevent Default override
+jQuery('.navbar-desktop .menu-item-164 > a').attr('href','/restaurants/');
+jQuery('.navbar-desktop a.nav-link.dropdown-toggle').removeAttr('data-toggle');
+
 
 //responsive slides (header/images)
 jQuery('.rslides').responsiveSlides({
