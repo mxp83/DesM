@@ -24,7 +24,7 @@
 			<?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
 				<?php if( get_post_status($p->ID) == publish) : ?>
 
-				    <div class="col-md-4 clearfix promo-item">
+				    <div class="col-md-12 col-lg-4 clearfix promo-item">
 				    	<div class="promo-image-box" style="background-image: url('<?php echo get_the_post_thumbnail_url($p->ID); ?>');">
 					    	<div class="overlay"></div>
 					    	<div class="promo-image-text text-center">

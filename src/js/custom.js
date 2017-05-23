@@ -13,6 +13,8 @@ jQuery('.sidenav').prepend('<li class="menu-item nav-item text-center logo"><img
 jQuery(document).ready(function(){
 	hoverClose();
 
+});
+jQuery(window).load(function(){
 	jQuery('body').addClass('loaded');
 });
 

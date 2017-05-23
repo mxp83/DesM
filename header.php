@@ -25,7 +25,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <body <?php body_class(); ?>>
 
-<?php include(get_template_directory() . '/inc/preloader.php'); ?>
+<?php //include(get_template_directory() . '/inc/preloader.php'); ?>
 
 <div class="hfeed site" id="page">
 

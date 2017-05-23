@@ -167,6 +167,11 @@ gulp.task('scripts', function() {
 
         basePaths.dev + 'js/skip-link-focus-fix.js',
         basePaths.dev + 'js/responsiveslides.js',
+        basePaths.dev + 'js/isotope/js/item.js',
+        basePaths.dev + 'js/isotope/js/layout-mode.js',
+        basePaths.dev + 'js/isotope/js/isotope.js',
+        basePaths.dev + 'js/isotope/js/layout-modes/fit-rows.js',
+        basePaths.dev + 'js/isotope/js/layout-modes/masonry.js',
         basePaths.dev + 'js/custom.js'
     ];
   gulp.src(scripts)
